@@ -1,9 +1,14 @@
+'use client'
 import { User } from '@/app/page';
 import React from 'react';
 interface IProps {
   user: User
 }
+
 const Product = ({user}: IProps) => {
+  const handleClick = () => {
+    window.print();
+  }
   return (
     <>
       <div id="sidebar">
@@ -11,6 +16,7 @@ const Product = ({user}: IProps) => {
         </div>
       </div>
       <div id="page-container">
+        <button onClick={() => handleClick()}>Print PDF</button>
         <div id="pf1" className="pf w0 h0" data-page-no="1">
           <div className="pc pc1 w0 h0"><img className="bi x0 y0 w1 h1" alt="" src="bg1.png" />
             <div className="c x1 y1 w0 h2">
